@@ -136,14 +136,15 @@ def process_currency_pair(currency_pair, deviation, log_level, debug=False):
     standard_deviation = calculate_standard_deviation(ticker_data['changes'], debug)
     if standard_deviation > deviation:
         # Calculate the average price for the last 24 hours
-        average_price = format(sum([float(price) for price in ticker_data['changes']]) / len(ticker_data['changes']), '.2f')
+        average_price = format(sum([float(price) for price in ticker_data['changes']]) / len(ticker_data['changes']),
+                               '.2f')
         # Calculate the price change between open and close
         price_change = format(float(ticker_data['close']) - float(ticker_data['open']), '.2f')
 
         alert_data = {'timestamp': f'{datetime.datetime.now(datetime.UTC).isoformat()}', 'level': log_level,
-            'trading_pair': currency_pair, 'deviation': True,
-            'data': {'last_price': f'{ticker_data["close"]}', 'average': f'{average_price}',
-                'change': f'{price_change}', 'sdev': f'{standard_deviation}'}}
+                      'trading_pair': currency_pair, 'deviation': True,
+                      'data': {'last_price': f'{ticker_data["close"]}', 'average': f'{average_price}',
+                               'change': f'{price_change}', 'sdev': f'{standard_deviation}'}}
         print(alert_data)
 
 
