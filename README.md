@@ -70,15 +70,15 @@ options:
 
 ```json
 {
-  'timestamp': '2024-07-15T19:46:02.408916+00:00',
-  'level': 'INFO',
-  'trading_pair': 'etheur',
-  'deviation': True,
-  'data': {
-    'last_price': '2930.05',
-    'average': '3046.46',
-    'change': '-185.17',
-    'sdev': '53.974868635975675'
+  "timestamp": "2024-07-15T19:46:02.408916+00:00",
+  "level": "INFO",
+  "trading_pair": "etheur",
+  "deviation": "True",
+  "data": {
+    "last_price": "2930.05",
+    "average": "3046.46",
+    "change": "-185.17",
+    "sdev": "53.974868635975675"
   }
 }
 
